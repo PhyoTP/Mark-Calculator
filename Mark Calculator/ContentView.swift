@@ -24,8 +24,8 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("Subjects")) { // <-- Use header instead of label
-                    ForEach(subjects, id: \.self) { subject in
-                        NavigationLink(destination: Text(subject)) {
+                    ForEach($subjects, id: \.self) { $subject in
+                        NavigationLink(destination: SubjectView(sub: $subject)) {
                             Text(subject)
                         }
                     }
