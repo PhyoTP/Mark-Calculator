@@ -8,14 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var system = "Select a system"
+    var systems = ["MSG", "GPA", "AL", "Overall grade", "N level grading", "JC", "Polytechnic", "5 point", "4 point"]
+    @State private var subjects = ["Mathematics"]
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            Form {
+                Section {
+                    Picker("Grading System", selection: $system) {
+                        ForEach(systems, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                }
+                
+                Section(header: Text("Subjects")) { // <-- Use header instead of label
+                    ForEach(subjects, id: \.self) { subject in
+                        NavigationLink(destination: Text(subject)) {
+                            Text(subject)
+                        }
+                    }
+                    
+                    Button(action: {
+                        // Show sheet
+                    }) {
+                        HStack {
+                            Image(systemName: "plus")
+                            Text("Add a subject")
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Mark Calculator")
         }
-        .padding()
     }
 }
 
