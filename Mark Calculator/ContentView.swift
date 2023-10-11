@@ -23,31 +23,34 @@ struct ContentView: View {
                     }
                 }
                 
-                Section(header: Text("Subjects")) { // <-- Use header instead of label
-                    List(subjects) { subject in
+                .navigationBarTitle("Mark Calculator")
+                Section("Subjects") {
+                    List($subjects) { $subject in
+                        NavigationLink{
+                            SubjectView(sub: $subject.name)
+                        }label: {
+                            Text(subject.name)
+                            
+                            
+                        }
                         
-                        Text(subject.name)
-                    }
-//                    ForEach($subjects, id: \.self) { $subject in
-//                        NavigationLink(destination: SubjectView(sub: $subject.name)) {
-//                            Text($subject.name)
-//                        }
-//                    }
-                    
-                    Button(action: {
-                        // Show sheet
-                    }) {
-                        HStack {
-                            Image(systemName: "plus")
-                            Text("Add a subject")
+                        
+                        
+                        Button{
+                            // Show sheet
+                        }label: {
+                            HStack {
+                                Image(systemName: "plus")
+                                Text("Add a subject")
+                            }
                         }
                     }
                 }
             }
-            .navigationTitle("Mark Calculator")
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

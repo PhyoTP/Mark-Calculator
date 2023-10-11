@@ -10,8 +10,8 @@ import SwiftUI
 struct SubjectView: View {
     @Binding var sub: String
     var body: some View {
-        NavigationStack{
-            Form{
+        NavigationView {
+            Form {
                 Text("hello")
             }
             .navigationTitle(sub)
