@@ -9,11 +9,18 @@ import Foundation
 
 struct Assessment{
     var name: String
-    var percentage: Int
-    var total: Int
+    var percentageOfTotal: Float
+    var totalMarks: Float
+    var done: Bool
+    var markAttained: Float
 }
 
-struct Subject{
+struct Subject: Identifiable{
+    var id: UUID = UUID()
     var name: String
     var assessments: [Assessment]
+}
+
+func percentage(number:Float,total:Float) -> Float{
+    return number/total*100
 }

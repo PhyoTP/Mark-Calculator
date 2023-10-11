@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var system = "Select a system"
     var systems = ["MSG", "GPA", "AL", "Overall grade", "N level grading", "JC", "Polytechnic", "5 point", "4 point"]
-    @State private var subjects = ["Mathematics"]
+    @State private var subjects = [Subject(name: "Mathematics", assessments: [Assessment(name: "WA1", percentageOfTotal: 10, totalMarks: 30, done: false, markAttained: 25)])]
     
     var body: some View {
         NavigationStack {
@@ -24,11 +24,15 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("Subjects")) { // <-- Use header instead of label
-                    ForEach($subjects, id: \.self) { $subject in
-                        NavigationLink(destination: SubjectView(sub: $subject)) {
-                            Text(subject)
-                        }
+                    List(subjects) { subject in
+                        
+                        Text(subject.name)
                     }
+//                    ForEach($subjects, id: \.self) { $subject in
+//                        NavigationLink(destination: SubjectView(sub: $subject.name)) {
+//                            Text($subject.name)
+//                        }
+//                    }
                     
                     Button(action: {
                         // Show sheet
