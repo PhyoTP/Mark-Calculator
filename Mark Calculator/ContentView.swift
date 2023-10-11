@@ -21,32 +21,34 @@ struct ContentView: View {
                             Text($0)
                         }
                     }
-                }
+                }//grading system picker
                 
-                .navigationBarTitle("Mark Calculator")
                 Section("Subjects") {
-                    List($subjects) { $subject in
+                    List($subjects,editActions: .all) { $subject in
                         NavigationLink{
                             SubjectView(sub: $subject.name)
                         }label: {
                             Text(subject.name)
-                            
-                            
                         }
-                        
-                        
-                        
-                        Button{
-                            // Show sheet
-                        }label: {
-                            HStack {
-                                Image(systemName: "plus")
-                                Text("Add a subject")
+                    }
+                    .toolbar{
+                        ToolbarItem(placement:.navigationBarLeading){
+                            EditButton()
+                        }
+                        ToolbarItem(placement: .navigationBarTrailing){
+                            Button{
+                                // Show sheet
+                            }label: {
+                                HStack {
+                                    Image(systemName: "plus")
+                                    Text("Add a subject")
+                                }
                             }
                         }
                     }
                 }
             }
+            .navigationBarTitle("Mark Calculator")
         }
     }
 }
