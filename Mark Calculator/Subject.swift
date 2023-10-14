@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Assessment{
+struct Assessment: Codable{
     var name: String
     var percentageOfTotal: Float
     var totalMarks: Float
@@ -15,8 +15,8 @@ struct Assessment{
     var markAttained: Float
 }
 
-struct Subject: Identifiable{
-    var id: UUID = UUID()
+struct Subject: Identifiable, Codable{
+    var id = UUID()
     var name: String
     var assessments: [Assessment]
 }
