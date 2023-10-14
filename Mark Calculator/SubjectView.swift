@@ -8,19 +8,27 @@
 import SwiftUI
 
 struct SubjectView: View {
-    @Binding var sub: String
+    @Binding var sub: Subject
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
-                Text("hello")
+                Section("Assessments"){
+                    List($sub.assessments,editActions: .all) { $assessment in
+                        NavigationLink{
+                            AssessmentView()
+                        }label: {
+                            Text(assessment.name)
+                        }
+                    }
+                }
             }
-            .navigationTitle(sub)
+            .navigationTitle(sub.name)
         }
     }
 }
 
 struct SubjectView_Previews: PreviewProvider {
     static var previews: some View {
-        SubjectView(sub: .constant("Example Subject"))
+        SubjectView(sub: .constant(Subject(name: "Mathematics", assessments: [Assessment(name: "WA1", percentageOfTotal: 10, totalMarks: 30, done: false, markAttained: 25)])))
     }
 }

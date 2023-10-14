@@ -26,7 +26,7 @@ struct ContentView: View {
                 Section("Subjects") {
                     List($settings.subjects,editActions: .all) { $subject in
                         NavigationLink{
-                            SubjectView(sub: $subject.name)
+                            SubjectView(sub: $subject)
                         }label: {
                             Text(subject.name)
                         }

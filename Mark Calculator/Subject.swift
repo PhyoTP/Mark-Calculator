@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Assessment: Codable{
+struct Assessment: Identifiable,Codable{
+    var id = UUID()
     var name: String
     var percentageOfTotal: Float
     var totalMarks: Float
