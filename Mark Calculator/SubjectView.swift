@@ -20,6 +20,22 @@ struct SubjectView: View {
                             Text(assessment.name)
                         }
                     }
+                    .toolbar{
+                        ToolbarItem(placement:.navigationBarLeading){
+                            EditButton()
+                        }
+                        ToolbarItem(placement: .navigationBarTrailing){
+                            Button{
+                                // Show sheet
+                            }label: {
+                                HStack {
+                                    Image(systemName: "plus")
+                                    Text("Add an assessment")
+                                }
+                            }
+                        }
+                    }
+
                 }
             }
             .navigationTitle(sub.name)

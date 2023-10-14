@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D9357F462ADA818900F67D1E /* AssessmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9357F452ADA818900F67D1E /* AssessmentView.swift */; };
+		D9357F482ADA82DC00F67D1E /* NewAssessmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9357F472ADA82DC00F67D1E /* NewAssessmentView.swift */; };
 		D93CCC7C2AD5858F0040C3D4 /* Mark_CalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CCC7B2AD5858F0040C3D4 /* Mark_CalculatorApp.swift */; };
 		D93CCC7E2AD5858F0040C3D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CCC7D2AD5858F0040C3D4 /* ContentView.swift */; };
 		D93CCC802AD585910040C3D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93CCC7F2AD585910040C3D4 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		D9357F452ADA818900F67D1E /* AssessmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentView.swift; sourceTree = "<group>"; };
+		D9357F472ADA82DC00F67D1E /* NewAssessmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAssessmentView.swift; sourceTree = "<group>"; };
 		D93CCC782AD5858F0040C3D4 /* Mark Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mark Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93CCC7B2AD5858F0040C3D4 /* Mark_CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mark_CalculatorApp.swift; sourceTree = "<group>"; };
 		D93CCC7D2AD5858F0040C3D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				D93CCC7B2AD5858F0040C3D4 /* Mark_CalculatorApp.swift */,
 				D93CCC7D2AD5858F0040C3D4 /* ContentView.swift */,
+				D9357F472ADA82DC00F67D1E /* NewAssessmentView.swift */,
 				D93CCCAC2AD6ED870040C3D4 /* SubjectManager.swift */,
 				D93CCCAA2AD6EC5C0040C3D4 /* NewSubjectView.swift */,
 				D93CCCA62AD6473F0040C3D4 /* SubjectView.swift */,
@@ -279,6 +282,7 @@
 				D93CCCA92AD65D9F0040C3D4 /* Subject.swift in Sources */,
 				D93CCC7E2AD5858F0040C3D4 /* ContentView.swift in Sources */,
 				D93CCCA72AD6473F0040C3D4 /* SubjectView.swift in Sources */,
+				D9357F482ADA82DC00F67D1E /* NewAssessmentView.swift in Sources */,
 				D93CCCAB2AD6EC5C0040C3D4 /* NewSubjectView.swift in Sources */,
 				D93CCC7C2AD5858F0040C3D4 /* Mark_CalculatorApp.swift in Sources */,
 			);
