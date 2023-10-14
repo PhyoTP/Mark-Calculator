@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var system = "Select a system"
     var systems = ["MSG", "GPA", "AL", "Overall grade", "N level grading", "JC", "Polytechnic", "5 point", "4 point"]
-    @State private var subjects = [Subject(name: "Mathematics", assessments: [Assessment(name: "WA1", percentageOfTotal: 10, totalMarks: 30, done: false, markAttained: 25)])]
+    @EnvironmentObject var settings: SubjectManager
     
     var body: some View {
         NavigationStack {
@@ -24,7 +24,7 @@ struct ContentView: View {
                 }//grading system picker
                 
                 Section("Subjects") {
-                    List($subjects,editActions: .all) { $subject in
+                    List($settings.subjects,editActions: .all) { $subject in
                         NavigationLink{
                             SubjectView(sub: $subject.name)
                         }label: {
@@ -57,5 +57,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(SubjectManager())
     }
 }
