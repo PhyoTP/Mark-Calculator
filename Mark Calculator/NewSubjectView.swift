@@ -8,20 +8,22 @@
 import SwiftUI
 
 struct NewSubjectView: View {
-    @State private var name = ""
-    @State private var stuff:[String] = []
+    @State private var subjec = ""
+    @State private var name:[String] = []
     @State private var stuffer = 0
-    @State private var stuffed:[Int] = []
+    @State private var stuff:[Int] = []
+    @State private var value:[Float] = []
     var body: some View {
         Form{
             Section("Subject Info"){
-                TextField("Name",text: $name)
+                TextField("Name",text: $subjec)
             }
             Section("Assessments"){
                 Button{
-                    stuff.append("")
+                    name.append("")
+                    value.append(0.0)
                     stuffer+=1
-                    stuffed.append(stuffer)
+                    stuff.append(stuffer)
                 }label: {
                     HStack{
                         Image(systemName: "plus")
@@ -29,8 +31,17 @@ struct NewSubjectView: View {
                     }
                     
                 }
-                ForEach(stuffed,id: \.self){ something in
-                    TextField("Name",text: $stuff[something-1])
+                ForEach(stuff,id: \.self){ something in
+                    
+                    TextField("Name",text: $name[something-1])
+                    HStack{
+                        Text("Percentage Value")
+                        TextField("Percentage Value",value:$value[something-1], formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
+                        Spacer()
+                        Text("%")
+                    }
+                    
                 }
             }
         }

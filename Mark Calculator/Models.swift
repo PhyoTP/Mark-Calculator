@@ -20,6 +20,7 @@ struct Subject: Identifiable, Codable{
     var id = UUID()
     var name: String
     var assessments: [Assessment]
+    var yearDone: Bool
 }
 
 func percentage(number:Float,total:Float) -> Float{

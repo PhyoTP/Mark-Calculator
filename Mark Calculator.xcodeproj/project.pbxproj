@@ -17,7 +17,7 @@
 		D93CCC982AD585910040C3D4 /* Mark_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CCC972AD585910040C3D4 /* Mark_CalculatorUITests.swift */; };
 		D93CCC9A2AD585910040C3D4 /* Mark_CalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CCC992AD585910040C3D4 /* Mark_CalculatorUITestsLaunchTests.swift */; };
 		D93CCCA72AD6473F0040C3D4 /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CCCA62AD6473F0040C3D4 /* SubjectView.swift */; };
-		D93CCCA92AD65D9F0040C3D4 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CCCA82AD65D9F0040C3D4 /* Subject.swift */; };
+		D93CCCA92AD65D9F0040C3D4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CCCA82AD65D9F0040C3D4 /* Models.swift */; };
 		D93CCCAB2AD6EC5C0040C3D4 /* NewSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CCCAA2AD6EC5C0040C3D4 /* NewSubjectView.swift */; };
 		D93CCCAD2AD6ED870040C3D4 /* SubjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CCCAC2AD6ED870040C3D4 /* SubjectManager.swift */; };
 /* End PBXBuildFile section */
@@ -54,7 +54,7 @@
 		D93CCC972AD585910040C3D4 /* Mark_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mark_CalculatorUITests.swift; sourceTree = "<group>"; };
 		D93CCC992AD585910040C3D4 /* Mark_CalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mark_CalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D93CCCA62AD6473F0040C3D4 /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
-		D93CCCA82AD65D9F0040C3D4 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		D93CCCA82AD65D9F0040C3D4 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		D93CCCAA2AD6EC5C0040C3D4 /* NewSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectView.swift; sourceTree = "<group>"; };
 		D93CCCAC2AD6ED870040C3D4 /* SubjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +114,7 @@
 				D93CCCAA2AD6EC5C0040C3D4 /* NewSubjectView.swift */,
 				D93CCCA62AD6473F0040C3D4 /* SubjectView.swift */,
 				D9357F452ADA818900F67D1E /* AssessmentView.swift */,
-				D93CCCA82AD65D9F0040C3D4 /* Subject.swift */,
+				D93CCCA82AD65D9F0040C3D4 /* Models.swift */,
 				D93CCC7F2AD585910040C3D4 /* Assets.xcassets */,
 				D93CCC842AD585910040C3D4 /* Mark_Calculator.entitlements */,
 				D93CCC812AD585910040C3D4 /* Preview Content */,
@@ -279,7 +279,7 @@
 			files = (
 				D93CCCAD2AD6ED870040C3D4 /* SubjectManager.swift in Sources */,
 				D9357F462ADA818900F67D1E /* AssessmentView.swift in Sources */,
-				D93CCCA92AD65D9F0040C3D4 /* Subject.swift in Sources */,
+				D93CCCA92AD65D9F0040C3D4 /* Models.swift in Sources */,
 				D93CCC7E2AD5858F0040C3D4 /* ContentView.swift in Sources */,
 				D93CCCA72AD6473F0040C3D4 /* SubjectView.swift in Sources */,
 				D9357F482ADA82DC00F67D1E /* NewAssessmentView.swift in Sources */,
