@@ -9,7 +9,9 @@ import SwiftUI
 
 struct NewSubjectView: View {
     @State private var name = ""
-    @State private var stuff:[Assessment] = []
+    @State private var stuff:[String] = []
+    @State private var stuffer = 0
+    @State private var stuffed:[Int] = []
     var body: some View {
         Form{
             Section("Subject Info"){
@@ -17,7 +19,9 @@ struct NewSubjectView: View {
             }
             Section("Assessments"){
                 Button{
-                    stuff.append(Assessment(name: "ggsdr", percentageOfTotal: 0.0, totalMarks: 0.0, done: true, markAttained: 0.0))
+                    stuff.append("")
+                    stuffer+=1
+                    stuffed.append(stuffer)
                 }label: {
                     HStack{
                         Image(systemName: "plus")
@@ -25,8 +29,8 @@ struct NewSubjectView: View {
                     }
                     
                 }
-                ForEach(stuff){ something in
-                    Text("hello")
+                ForEach(stuffed,id: \.self){ something in
+                    TextField("Name",text: $stuff[something-1])
                 }
             }
         }
