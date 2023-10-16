@@ -35,7 +35,6 @@ struct SubjectView: View {
                             }
                         }
                     }
-
                 }
             }
             .navigationTitle(sub.name)

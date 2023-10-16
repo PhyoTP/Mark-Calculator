@@ -8,8 +8,28 @@
 import SwiftUI
 
 struct NewSubjectView: View {
+    @State private var name = ""
+    @State private var stuff:[Assessment] = []
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form{
+            Section("Subject Info"){
+                TextField("Name",text: $name)
+            }
+            Section("Assessments"){
+                Button{
+                    stuff.append(Assessment(name: "ggsdr", percentageOfTotal: 0.0, totalMarks: 0.0, done: true, markAttained: 0.0))
+                }label: {
+                    HStack{
+                        Image(systemName: "plus")
+                        Text("Add assessment")
+                    }
+                    
+                }
+                ForEach(stuff){ something in
+                    Text("hello")
+                }
+            }
+        }
     }
 }
 
