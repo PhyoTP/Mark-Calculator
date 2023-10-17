@@ -16,6 +16,7 @@ struct NewSubjectView: View {
     @State private var value:[Float] = []
     @State private var totalMarks:[Float] = []
     @State private var isDone:[Bool] = []
+    @State private var marksAttained:[Float] = []
     
     var body: some View {
         Form{
@@ -28,6 +29,7 @@ struct NewSubjectView: View {
                     value.append(0.0)
                     totalMarks.append(0.0)
                     isDone.append(false)
+                    marksAttained.append(0.0)
                     counter+=1
                     counts.append(counter)
                 }label: {
@@ -54,10 +56,15 @@ struct NewSubjectView: View {
                         Text("Is done?")
                     }
                     if isDone[count-1]{
-                        
+                        HStack{
+                            Text("Marks Attained")
+                            TextField("Marks Attained",value:$marksAttained[count-1], formatter: NumberFormatter())
+                                .keyboardType(.numberPad)
+                        }
                     }
                 }
             }
+            
         }
     }
 }
