@@ -12,6 +12,9 @@ struct SubjectView: View {
     var body: some View {
         NavigationStack {
             Form {
+                Section("Name"){
+                    TextField("Name",text: $sub.name)
+                }
                 Section("Assessments"){
                     List($sub.assessments,editActions: .all) { $assessment in
                         NavigationLink{
