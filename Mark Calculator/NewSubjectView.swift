@@ -9,15 +9,18 @@ import SwiftUI
 
 struct NewSubjectView: View {
     @State private var subjec = ""
-    @State private var counter = 0
+    @State private var counter = 0 // no of assessments
+    @State private var counts:[Int] = []//assessment nums
     
-    @State private var counts:[Int] = []
     @State private var name:[String] = []
     @State private var value:[Float] = []
     @State private var totalMarks:[Float] = []
     @State private var isDone:[Bool] = []
     @State private var marksAttained:[Float] = []
     
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var settings: SubjectManager
+    @State private var assessments:[Assessment]=[]
     var body: some View {
         Form{
             Section("Subject Info"){
@@ -60,11 +63,22 @@ struct NewSubjectView: View {
                             Text("Marks Attained")
                             TextField("Marks Attained",value:$marksAttained[count-1], formatter: NumberFormatter())
                                 .keyboardType(.numberPad)
-                        }
+                        }//Marks attained
                     }
                 }
             }
-            
+            Section{
+                Button{
+                    for count in counts {
+                        assessments.append(Assessment(name: name[count-1], percentageOfTotal: value[count-1], totalMarks: totalMarks[count-1], done: isDone[count-1], markAttained: marksAttained[count-1]))
+                        
+                    }
+                    settings.subjects.append(Subject(name: subjec, assessments:assessments))
+                    dismiss()
+                }label:{
+                    Text("Save")
+                }
+            }
         }
     }
 }
@@ -72,5 +86,6 @@ struct NewSubjectView: View {
 struct NewSubjectView_Previews: PreviewProvider {
     static var previews: some View {
         NewSubjectView()
+            .environmentObject(SubjectManager())
     }
 }
