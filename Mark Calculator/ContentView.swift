@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var system = "Select a system"
     var systems = ["MSG", "GPA", "AL", "Overall grade", "N level grading", "JC", "Polytechnic", "5 point", "4 point"]
     @EnvironmentObject var settings: SubjectManager
-    
+    @State private var showSheet = false
     var body: some View {
         NavigationStack {
             Form {
@@ -31,24 +31,29 @@ struct ContentView: View {
                             Text(subject.name)
                         }
                     }
-                    .toolbar{
-                        ToolbarItem(placement:.navigationBarLeading){
-                            EditButton()
-                        }
-                        ToolbarItem(placement: .navigationBarTrailing){
-                            Button{
-                                // Show sheet
-                            }label: {
-                                HStack {
-                                    Image(systemName: "plus")
-                                    Text("Add a subject")
-                                }
-                            }
+                    
+                }
+            }
+            .navigationBarTitle("Mark Calculator")
+            .sheet(isPresented: $showSheet){
+                NewSubjectView()
+                
+            }
+            .toolbar{
+                ToolbarItem(placement:.navigationBarLeading){
+                    EditButton()
+                }
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Button{
+                        showSheet = true
+                    }label: {
+                        HStack {
+                            Image(systemName: "plus")
+                            Text("Add a subject")
                         }
                     }
                 }
             }
-            .navigationBarTitle("Mark Calculator")
         }
     }
 }
