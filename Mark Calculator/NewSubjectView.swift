@@ -9,10 +9,14 @@ import SwiftUI
 
 struct NewSubjectView: View {
     @State private var subjec = ""
+    @State private var counter = 0
+    
+    @State private var counts:[Int] = []
     @State private var name:[String] = []
-    @State private var stuffer = 0
-    @State private var stuff:[Int] = []
     @State private var value:[Float] = []
+    @State private var totalMarks:[Float] = []
+    @State private var isDone:[Bool] = []
+    
     var body: some View {
         Form{
             Section("Subject Info"){
@@ -22,26 +26,36 @@ struct NewSubjectView: View {
                 Button{
                     name.append("")
                     value.append(0.0)
-                    stuffer+=1
-                    stuff.append(stuffer)
+                    totalMarks.append(0.0)
+                    isDone.append(false)
+                    counter+=1
+                    counts.append(counter)
                 }label: {
                     HStack{
                         Image(systemName: "plus")
                         Text("Add assessment")
                     }
-                    
                 }
-                ForEach(stuff,id: \.self){ something in
-                    
-                    TextField("Name",text: $name[something-1])
+                ForEach(counts,id: \.self){ count in
+                    TextField("Name",text: $name[count-1])
                     HStack{
                         Text("Percentage Value")
-                        TextField("Percentage Value",value:$value[something-1], formatter: NumberFormatter())
+                        TextField("Percentage Value",value:$value[count-1], formatter: NumberFormatter())
                             .keyboardType(.numberPad)
                         Spacer()
                         Text("%")
+                    }//percentage value
+                    HStack{
+                        Text("Total Marks")
+                        TextField("Total Marks",value:$totalMarks[count-1], formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
+                    }//total marks
+                    Toggle(isOn: $isDone[count-1]){
+                        Text("Is done?")
                     }
-                    
+                    if isDone[count-1]{
+                        
+                    }
                 }
             }
         }
