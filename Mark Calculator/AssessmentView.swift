@@ -8,13 +8,44 @@
 import SwiftUI
 
 struct AssessmentView: View {
+    @Binding var assess: Assessment
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            Form{
+                Section("Name"){
+                    TextField("Name",text: $assess.name)
+                }
+                Section("Info"){
+                    HStack{
+                        Text("Percentage Value")
+                        TextField("Percentage Value",value:$assess.percentageOfTotal, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
+                        Spacer()
+                        Text("%")
+                    }
+                    HStack{
+                        Text("Total Marks")
+                        TextField("Total Marks",value:$assess.totalMarks, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
+                    }
+                    Toggle(isOn:$assess.done){
+                        Text("Is done?")
+                    }
+                    if assess.done{
+                        HStack{
+                            Text("Marks Attained")
+                            TextField("Marks Attained",value:$assess.markAttained, formatter: NumberFormatter())
+                                .keyboardType(.numberPad)
+                        }//Marks attained
+                    }
+                }
+            }
+        }
     }
 }
 
 struct AssessmentView_Previews: PreviewProvider {
     static var previews: some View {
-        AssessmentView()
+        AssessmentView(assess: .constant(Assessment(name: "WA1", percentageOfTotal: 15.0, totalMarks: 30.0, done: false, markAttained: 0.0)))
     }
 }

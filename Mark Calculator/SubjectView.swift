@@ -18,7 +18,7 @@ struct SubjectView: View {
                 Section("Assessments"){
                     List($sub.assessments,editActions: .all) { $assessment in
                         NavigationLink{
-                            AssessmentView()
+                            AssessmentView(assess: $assessment)
                         }label: {
                             Text(assessment.name)
                         }

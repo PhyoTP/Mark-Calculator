@@ -78,7 +78,7 @@ struct NewSubjectView: View {
                 }label:{
                     Text("Save")
                 }
-            }
+            }//save button
         }
     }
 }
