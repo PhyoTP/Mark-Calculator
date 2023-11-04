@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SubjectView: View {
     @Binding var sub: Subject
+    @State private var showSheet = false
     var body: some View {
         NavigationStack {
             Form {
@@ -29,7 +30,7 @@ struct SubjectView: View {
                         }
                         ToolbarItem(placement: .navigationBarTrailing){
                             Button{
-                                // Show sheet
+                                showSheet = true
                             }label: {
                                 HStack {
                                     Image(systemName: "plus")
@@ -41,6 +42,9 @@ struct SubjectView: View {
                 }
             }
             .navigationTitle(sub.name)
+        }
+        .sheet(isPresented: $showSheet){
+            NewAssessmentView(subject: $sub)
         }
     }
 }

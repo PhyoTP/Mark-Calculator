@@ -67,16 +67,14 @@ struct NewSubjectView: View {
                     }
                 }
             }
-            Section{
-                Button{
+            Section("Save"){
+                Button("Save"){
                     for count in counts {
                         assessments.append(Assessment(name: name[count-1], percentageOfTotal: value[count-1], totalMarks: totalMarks[count-1], done: isDone[count-1], markAttained: marksAttained[count-1]))
                         
                     }
                     settings.subjects.append(Subject(name: subjec, assessments:assessments))
                     dismiss()
-                }label:{
-                    Text("Save")
                 }
             }//save button
         }
