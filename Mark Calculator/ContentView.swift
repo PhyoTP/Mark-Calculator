@@ -8,52 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var system = "Select a system"
-    var systems = ["MSG", "GPA", "AL", "Overall grade", "N level grading", "JC", "Polytechnic", "5 point", "4 point"]
-    @EnvironmentObject var settings: SubjectManager
-    @State private var showSheet = false
+    
     var body: some View {
-        NavigationStack {
-            Form {
-                Section {
-                    Picker("Grading System", selection: $system) {
-                        ForEach(systems, id: \.self) {
-                            Text($0)
-                        }
-                    }
-                }//grading system picker
-                
-                Section("Subjects") {
-                    List($settings.subjects,editActions: .all) { $subject in
-                        NavigationLink{
-                            SubjectView(sub: $subject)
-                        }label: {
-                            Text(subject.name)
-                        }
-                    }
-                    
+        TabView{
+            MarkCalculatorView()
+                .tabItem(){
+                    Label("Mark Calculator", systemImage:"m.circle")
                 }
-            }
-            .navigationBarTitle("Mark Calculator")
-            .sheet(isPresented: $showSheet){
-                NewSubjectView()
-                
-            }
-            .toolbar{
-                ToolbarItem(placement:.navigationBarLeading){
-                    EditButton()
+            SettingsView()
+                .tabItem(){
+                    Label("Settings",systemImage: "gear")
                 }
-                ToolbarItem(placement: .navigationBarTrailing){
-                    Button{
-                        showSheet = true
-                    }label: {
-                        HStack {
-                            Image(systemName: "plus")
-                            Text("Add a subject")
-                        }
-                    }
-                }
-            }
         }
     }
 }

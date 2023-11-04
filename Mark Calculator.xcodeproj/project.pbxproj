@@ -20,6 +20,8 @@
 		D93CCCA92AD65D9F0040C3D4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CCCA82AD65D9F0040C3D4 /* Models.swift */; };
 		D93CCCAB2AD6EC5C0040C3D4 /* NewSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CCCAA2AD6EC5C0040C3D4 /* NewSubjectView.swift */; };
 		D93CCCAD2AD6ED870040C3D4 /* SubjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CCCAC2AD6ED870040C3D4 /* SubjectManager.swift */; };
+		D9A4DF9C2AF5EB4900FEFB04 /* MarkCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A4DF9B2AF5EB4900FEFB04 /* MarkCalculatorView.swift */; };
+		D9A4DF9E2AF5EB5B00FEFB04 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A4DF9D2AF5EB5B00FEFB04 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		D93CCCA82AD65D9F0040C3D4 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		D93CCCAA2AD6EC5C0040C3D4 /* NewSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectView.swift; sourceTree = "<group>"; };
 		D93CCCAC2AD6ED870040C3D4 /* SubjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectManager.swift; sourceTree = "<group>"; };
+		D9A4DF9B2AF5EB4900FEFB04 /* MarkCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkCalculatorView.swift; sourceTree = "<group>"; };
+		D9A4DF9D2AF5EB5B00FEFB04 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 			children = (
 				D93CCC7B2AD5858F0040C3D4 /* Mark_CalculatorApp.swift */,
 				D93CCC7D2AD5858F0040C3D4 /* ContentView.swift */,
+				D9A4DF9B2AF5EB4900FEFB04 /* MarkCalculatorView.swift */,
+				D9A4DF9D2AF5EB5B00FEFB04 /* SettingsView.swift */,
 				D9357F472ADA82DC00F67D1E /* NewAssessmentView.swift */,
 				D93CCCAC2AD6ED870040C3D4 /* SubjectManager.swift */,
 				D93CCCAA2AD6EC5C0040C3D4 /* NewSubjectView.swift */,
@@ -278,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D93CCCAD2AD6ED870040C3D4 /* SubjectManager.swift in Sources */,
+				D9A4DF9E2AF5EB5B00FEFB04 /* SettingsView.swift in Sources */,
 				D9357F462ADA818900F67D1E /* AssessmentView.swift in Sources */,
 				D93CCCA92AD65D9F0040C3D4 /* Models.swift in Sources */,
 				D93CCC7E2AD5858F0040C3D4 /* ContentView.swift in Sources */,
@@ -285,6 +292,7 @@
 				D9357F482ADA82DC00F67D1E /* NewAssessmentView.swift in Sources */,
 				D93CCCAB2AD6EC5C0040C3D4 /* NewSubjectView.swift in Sources */,
 				D93CCC7C2AD5858F0040C3D4 /* Mark_CalculatorApp.swift in Sources */,
+				D9A4DF9C2AF5EB4900FEFB04 /* MarkCalculatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
