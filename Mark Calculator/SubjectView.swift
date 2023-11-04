@@ -24,24 +24,25 @@ struct SubjectView: View {
                             Text(assessment.name)
                         }
                     }
-                    .toolbar{
-                        ToolbarItem(placement:.navigationBarLeading){
-                            EditButton()
-                        }
-                        ToolbarItem(placement: .navigationBarTrailing){
-                            Button{
-                                showSheet = true
-                            }label: {
-                                HStack {
-                                    Image(systemName: "plus")
-                                    Text("Add an assessment")
-                                }
-                            }
+                    
+                }
+            }
+            .navigationTitle(sub.name)
+            .toolbar{
+                ToolbarItem(placement:.navigationBarLeading){
+                    EditButton()
+                }
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Button{
+                        showSheet = true
+                    }label: {
+                        HStack {
+                            Image(systemName: "plus")
+                            Text("Add an assessment")
                         }
                     }
                 }
             }
-            .navigationTitle(sub.name)
         }
         .sheet(isPresented: $showSheet){
             NewAssessmentView(subject: $sub)
@@ -51,6 +52,6 @@ struct SubjectView: View {
 
 struct SubjectView_Previews: PreviewProvider {
     static var previews: some View {
-        SubjectView(sub: .constant(Subject(name: "Mathematics", assessments: [Assessment(name: "WA1", percentageOfTotal: 10, totalMarks: 30, done: false, markAttained: 25)])))
+        SubjectView(sub: .constant(Subject(name: "Mathematics", assessments: [Assessment(name: "WA1", percentageOfTotal: 10, totalMarks: 30, done: true, markAttained: 25),Assessment(name: "WA2", percentageOfTotal: 15, totalMarks: 45, done: false, markAttained: 0)])))
     }
 }
